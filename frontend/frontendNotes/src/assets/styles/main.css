@@ -1,0 +1,61 @@
+.container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;    
+    margin: auto;
+}
+
+.block{
+    width: 50%;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    min-height: 20em;
+    flex-direction: column;
+}
+
+
+.containerCards{
+    
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.cardJ{
+    background-color: #202125;
+    color: #fff;
+    border-radius: 5px;
+    width: 25%; /* Tamaño máximo del elemento */
+    margin: 1%;
+    padding: 2%;
+    
+    
+}
+.btn-custom{
+    display: flex;
+    justify-content: center;
+    margin: 5%;    
+}
+.headerNote{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.editIcon{
+    color: #54575f;
+    
+}
+.iconButtonEdit{
+    border-radius: 5px;
+    border: none;
+    background-color: #00cc66;
+}
+.iconButtonDelete{
+    border-radius: 5px;
+    border: none;
+    background-color: #c82333;
+}
