@@ -5,13 +5,12 @@ import { useParams } from 'react-router-dom';
 
 function EditNote() {
 
+    const { getNoteById, editNote, setEditNote} = useFetch('http://localhost:8080/api/notes');
+    const { id } = useParams();  
 
     useEffect(() => {
         getNoteById(id);
     }, []);
-    const { getNoteById, editNote, setEditNote} = useFetch('http://localhost:8080/api/notes');
-    const { id } = useParams();  
-      
 
     if (!editNote || (editNote.title === "" && editNote.content === "")) {
         return <div>Loading...</div>;
@@ -24,9 +23,9 @@ function EditNote() {
             
             <section className='block'>
             <label htmlFor="title"><h3>Titulo</h3></label>
-                <input type="text" id='title' placeholder="Title" value={editNote[0].title}   />
+                <input type="text" id='title' placeholder="Title" value={editNote[0].title} onChange={(e) => setEditNote({ ...editNote, title: e.target.value })}  />
                 <label htmlFor="content"><h3>Content</h3></label>
-                <input type="text" id='content' placeholder="Content" value={editNote[0].content}  />                
+                <input type="text" id='content' placeholder="Content" value={editNote[0].content} onChange={(e) => setEditNote({ ...editNote, title: e.target.value })} />                
                 
                 <section className='btn-custom'>
                     <button className='btn btn-primary'>Save changes</button>

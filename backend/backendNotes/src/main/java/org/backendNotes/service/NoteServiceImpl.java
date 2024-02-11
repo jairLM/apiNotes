@@ -48,6 +48,30 @@ public class NoteServiceImpl implements INoteService {
     }
 
     @Override
+    public ResponseEntity<RestResponse> getNote(Long id) {
+        RestResponse response = new RestResponse();
+        List<Note> dataList = new ArrayList<>();
+        HttpStatus status;
+        try{
+            Optional<Note> noteFound = iNotesDao.findById(id);
+            if(noteFound.isPresent()){
+                dataList.add(noteFound.get());
+                response.setData(dataList);
+                status = HttpStatus.OK;
+                response.setStatus(status);
+            }else{
+                response.setData(dataList);
+                status = HttpStatus.NOT_FOUND;
+                response.setStatus(status);
+            }
+        }catch(Exception e){
+            System.out.println("Error " + e.getMessage());
+        }
+
+        return new ResponseEntity<>(response, response.getStatus());
+    }
+
+    @Override
     public ResponseEntity<RestResponse> postNote(Note note) {
         RestResponse response = new RestResponse();
         List<Note> dataList = new ArrayList<>();

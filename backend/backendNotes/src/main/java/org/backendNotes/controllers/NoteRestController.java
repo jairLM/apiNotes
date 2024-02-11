@@ -20,7 +20,11 @@ public class NoteRestController {
         return noteService.getNotes();
     }
 
-
+    @GetMapping("/notes/{id}")
+    public ResponseEntity<RestResponse> getNoteById(@PathVariable Long id){
+        return noteService.getNote(id);
+    }
+    
     @PostMapping("/notes")
     public ResponseEntity<RestResponse> createNote(@RequestBody Note note){
         return noteService.postNote(note);

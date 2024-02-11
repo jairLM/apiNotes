@@ -35,8 +35,8 @@ function Main() {
       <section className='containerCards'>        
           
           {data && data.map((note) => (
-            <div className="cardJ">
-              <div key={note.id}>
+            <div key={note.id} className="cardJ">
+              <div >
                 <p className='headerNote'>{note.id}
                   <button onClick={() => {handleClickNav(`/editNote/${note.id}`);} }  className='iconButtonEdit' ><i className="bi bi-pen-fill "></i></button>
                   <button type='submit' onClick={()=>deleteNote(note.id)} className='iconButtonDelete'><i className="bi bi-trash"></i></button>
