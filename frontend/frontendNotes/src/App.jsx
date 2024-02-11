@@ -1,4 +1,4 @@
-import Main from './assets/components/main'
+import Main from './assets/components/Main'
 import EditNote from './assets/components/EditNote'
 import {BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>   
       <Routes>
         <Route path='/' element={<Main/>}/>
-        <Route path='/editNote' element={<EditNote/>}/>         
+        <Route path='/editNote/:id' element={<EditNote/>}/>         
             
       </Routes>
     </BrowserRouter>

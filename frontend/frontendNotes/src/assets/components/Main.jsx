@@ -38,8 +38,8 @@ function Main() {
             <div className="cardJ">
               <div key={note.id}>
                 <p className='headerNote'>{note.id}
-                  <button onClick={() => handleClickNav('/editNote')}  className='iconButtonEdit' ><i class="bi bi-pen-fill "></i></button>
-                  <button type='submit' onClick={()=>deleteNote(note.id)} className='iconButtonDelete'><i class="bi bi-trash"></i></button>
+                  <button onClick={() => {handleClickNav(`/editNote/${note.id}`);} }  className='iconButtonEdit' ><i className="bi bi-pen-fill "></i></button>
+                  <button type='submit' onClick={()=>deleteNote(note.id)} className='iconButtonDelete'><i className="bi bi-trash"></i></button>
                 </p>
                 <h5>{note.title}</h5>
                 <p>{note.content}</p>
