@@ -101,7 +101,6 @@ public class NoteServiceImpl implements INoteService {
         try{
             Optional<Note> noteFound = iNotesDao.findById(id);
             if(noteFound.isPresent()){
-                noteFound.get().setId(note.getId());
                 noteFound.get().setTitle(note.getTitle());
                 noteFound.get().setContent(note.getContent());
                 iNotesDao.save(noteFound.get());

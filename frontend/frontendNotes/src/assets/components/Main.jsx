@@ -6,7 +6,7 @@ import {handleClickNavegate} from '../util/handleClickNavegate'
 function Main() {
     const navigate = useNavigate();
     const handleClickNav = (url) => handleClickNavegate(url, navigate)
-    const{addNote, newNote, setNewNote, data} = useFetch('http://localhost:8080/api/notes');
+    const{addNote, newNote, setNewNote, data, deleteNote} = useFetch('http://localhost:8080/api/notes');
 
   return (
     <>
