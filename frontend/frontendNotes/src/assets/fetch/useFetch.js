@@ -56,27 +56,45 @@ function useFetch(url) {
 
     }   
       
-      const deleteNote = async(noteId)=>{
+    const deleteNote = async(noteId)=>{
 
-        try {
+      try {
 
-            const response = await fetch(`${url}/${noteId}`,{
+          const response = await fetch(`${url}/${noteId}`,{
 
-              method: 'DELETE',
-              headers: {
-                  'Content-Type': 'application/json'
-              }
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
 
-            })
-          
-        } catch (error) {
-          console.error('Error deleting note:', error);
-        }
-
-
+          })
+        
+      } catch (error) {
+        console.error('Error deleting note:', error);
       }
+
+
+    }
+
+    const updateNote = async(noteId) =>{
+
+      try {
+
+        const response = await fetch(`${url}/${noteId}`, {
+        method:'PUT',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(editNote)
+        });
+        console.log(response);
+
+      } catch (error) {
+        console.error('Error updating note:', error);
+      }
+      
+
+    }
   
-    return { data, addNote, newNote, setNewNote, deleteNote, getNoteById, editNote, setEditNote };
+    return { data, addNote, newNote, setNewNote, deleteNote, getNoteById, editNote, setEditNote, updateNote };
   }
   
   export default useFetch;
