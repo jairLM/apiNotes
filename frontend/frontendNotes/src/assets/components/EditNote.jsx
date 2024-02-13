@@ -20,6 +20,8 @@ function EditNote() {
         return <div>Loading...</div>;
     } 
 
+    
+
 
   return (
     <>
@@ -27,9 +29,9 @@ function EditNote() {
             
             <section className='block'>
             <label htmlFor="title"><h3>Titulo</h3></label>
-                <input type="text" id='title' placeholder="Title" value={editNote.title} onChange={(e) => setEditNote({ ...editNote, title: e.target.value })}  />
+                <input type="text" id='title' placeholder="Title" value={editNote.title} onChange={(e) => setEditNote({ ...editNote, title: e.target.value })} defaultValue={editNote[0].title} />
                 <label htmlFor="content"><h3>Content</h3></label>
-                <input type="text" id='content' placeholder="Content" value={editNote.content} onChange={(e) => setEditNote({ ...editNote, content: e.target.value })} />                
+                <input type="text" id='content' placeholder="Content" value={editNote.content} onChange={(e) => setEditNote({ ...editNote, content: e.target.value })}defaultValue={editNote[0].content} />                
                 
                 <section className='btn-custom'>
                     <button onClick={()=> {updateNote(id), handleClickNav('/') }} className='btn btn-primary'>Save changes</button>

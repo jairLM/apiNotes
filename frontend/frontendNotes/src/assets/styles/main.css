@@ -8,12 +8,21 @@
 }
 
 .block{
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: center;    
     align-items: center;
     min-height: 20em;
     flex-direction: column;
+    margin-top: 5%;
+}
+.block input, select{
+    width: 100%;
+}
+
+.subBlock{
+    width: 100%;
+    margin:2%;
 }
 
 
