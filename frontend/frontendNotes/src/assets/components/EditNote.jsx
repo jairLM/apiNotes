@@ -28,10 +28,15 @@ function EditNote() {
         <main className='container'>
             
             <section className='block'>
-            <label htmlFor="title"><h3>Titulo</h3></label>
-                <input type="text" id='title' placeholder="Title" value={editNote.title} onChange={(e) => setEditNote({ ...editNote, title: e.target.value })} defaultValue={editNote[0].title} />
+                <section className='subBlock'>
+                <label htmlFor="title"><h3>Titulo</h3></label>
+                <input type="text" id='title' className='form-control' placeholder="Title" value={editNote.title} onChange={(e) => setEditNote({ ...editNote, title: e.target.value })} defaultValue={editNote[0].title} />
+                </section>
+
+                <section className='subBlock'>
                 <label htmlFor="content"><h3>Content</h3></label>
-                <input type="text" id='content' placeholder="Content" value={editNote.content} onChange={(e) => setEditNote({ ...editNote, content: e.target.value })}defaultValue={editNote[0].content} />                
+                <input type="text" id='content' className='form-control' placeholder="Content" value={editNote.content} onChange={(e) => setEditNote({ ...editNote, content: e.target.value })}defaultValue={editNote[0].content} />                
+                </section>
                 
                 <section className='btn-custom'>
                     <button onClick={()=> {updateNote(id), handleClickNav('/') }} className='btn btn-primary'>Save changes</button>
