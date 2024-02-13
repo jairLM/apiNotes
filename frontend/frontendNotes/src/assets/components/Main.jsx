@@ -15,18 +15,18 @@ function Main() {
         <section className='block'>
             
                 <section className='subBlock'>
-                <label htmlFor="title"><h3>Title</h3></label>
-                <input type="text" id='title' placeholder="Write a title of a note" value={newNote.title} onChange={(e) => setNewNote({ ...newNote, title: e.target.value })} />
+                <label htmlFor="title" className='form-label'><h3>Title</h3></label>
+                <input type="text" id='title' className='form-control' placeholder="Write a title for a note" value={newNote.title} onChange={(e) => setNewNote({ ...newNote, title: e.target.value })} />
                 </section>
 
                 <section className='subBlock'>
-                <label htmlFor="content"><h3>Content</h3></label>
-                <input type="text" id='content' placeholder="Write the content of the note" value={newNote.content} onChange={(e) => setNewNote({ ...newNote, content: e.target.value })} />
+                <label htmlFor="content" className='form-label'><h3>Content</h3></label>
+                <input type="text" id='content' className='form-control' placeholder="Write the content for the note" value={newNote.content} onChange={(e) => setNewNote({ ...newNote, content: e.target.value })} />
                 </section>
 
                 <section className='subBlock'>
                 <label htmlFor="category"><h3>Category</h3></label>
-                <select name="options" id="category">
+                <select name="options" id="category" className='form-select'>
                     <option value=""></option>
                     <option value="important">important</option>
                     <option value="optional">optional</option>
